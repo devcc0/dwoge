@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+body {
+  background-image: url("images/backgrond.png");
+}
+
+.creative {
+  position: absolute;
+  text-align: center;
+}
+
+.container {
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.circle {
+  animation: float 4.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+  will-change: transform;
+  max-width: 300px;
+}
+
+.noise {
+  position: fixed;
+  top: -300%;
+  left: -150%;
+  height: 600%;
+  width: 600%;
+  -webkit-animation: grain 7s steps(10) infinite;
+  animation: grain 7s steps(10) infinite;
+  background-image: url(https://res.cloudinary.com/jasuaje/image/upload/v1715396595/6553292a9ddac219c48d70ad17498384.png);
+  background-size: 200px;
+  background-repeat: repeat;
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -12%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes grain {
+  0%, 100% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    transform: translate(7%, -25%);
+  }
+  40% {
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    transform: translate(15%);
+  }
+  70% {
+    transform: translateY(15%);
+  }
+  80% {
+    transform: translate(3%, 35%);
+  }
+  90% {
+    transform: translate(-10%, 10%);
+  }
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+body {
+
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.shareArticle {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+}
+
+.shareSocial {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .shareSocial {
+    flex-flow: column;
+  }
+}
+.shareSocial .socialTitle {
+  margin: 0 15px 0 0;
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  .shareSocial .socialTitle {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+.seperator{
+float:left;
+width:100%;
+}
+.shareSocial .socialList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+.shareSocial .socialList li {
+  margin: 5px;
+}
+.shareSocial .socialList li:first-child {
+  padding-left: 0;
+}
+.shareSocial .socialList li a {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  text-decoration: none;
+  background-color: #999;
+  color: #fff;
+  transition: 0.35s;
+}
+.shareSocial .socialList li a i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  transform: scale(1) translate(-50%, -50%);
+  transition: 0.35s;
+}
+.shareSocial .socialList li a:hover i {
+  transform: scale(1.5) translate(-50%, -50%);
+}
+.shareSocial .socialList li a {
+  background-color: #BD081C;
+}
+
+
+.shareLink .permalink {
+  position: relative;
+  border-radius: 30px;
+}
+.shareLink .permalink .textLink {
+  text-align: center;
+  padding: 12px 60px 12px 30px;
+  height: 45px;
+  width: 450px;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  color: #494949;
+  border-radius: 25px;
+  border: 1px solid #f2f2f2;
+  background-color: #f2f2f2;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  transition: all 0.3s ease;
+}
+@media (max-width: 767px) {
+  .shareLink .permalink .textLink {
+    width: 100%;
+  }
+}
+.shareLink .permalink .textLink:focus {
+  border-color: #d8d8d8;
+}
+.shareLink .permalink .textLink::-moz-selection {
+  color: #fff;
+  background-color: #ff0a4b;
+}
+.shareLink .permalink .textLink::selection {
+  color: #fff;
+  background-color: #ff0a4b;
+}
+.shareLink .permalink .copyLink {
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+.shareLink .permalink .copyLink:hover:after {
+  opacity: 1;
+  transform: translateY(0) translateX(-50%);
+}
+.shareLink .permalink .copyLink:after {
+  content: attr(tooltip);
+  width: 140px;
+  bottom: -40px;
+  left: 50%;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  background-color: #000000;
+  color: #ffffff;
+  transform: translateY(-10px) translateX(-50%);
+  transition: all 300ms ease;
+  text-align: center;
+}
+.shareLink .permalink .copyLink i {
+  font-size: 20px;
+  color: #ff0a4b;
+}
